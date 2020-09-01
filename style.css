@@ -6,7 +6,7 @@
  header{
  background-image: url(https://previews.123rf.com/images/maxkabakov/maxkabakov1608/maxkabakov160801397/61046311-science-concept-arrow-with-materials-science-on-grunge-textured-concrete-wall-background-3d-renderin.jpg);
   height: 100vh;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
 }
  .navbar {
