@@ -3,6 +3,12 @@
    margin: 0;
    padding: 0;
  }
+ header{
+ background-image: url(https://previews.123rf.com/images/maxkabakov/maxkabakov1608/maxkabakov160801397/61046311-science-concept-arrow-with-materials-science-on-grunge-textured-concrete-wall-background-3d-renderin.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
  .navbar {
     width: 100%;
     background-color: #555;
@@ -95,9 +101,4 @@
   .subnav:hover .subnav-content {
     display: block;
   }
-  header{
-    background-image: url(../site/sgg.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-  }
+ 
