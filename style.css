@@ -275,7 +275,7 @@ html{
 }
 .vidcontent p{
     font-family: 'Roboto Condensed',sans-serif;
-
+color: black;
 }
 #about-us .carousel-indicators{
     position: static;
