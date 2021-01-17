@@ -1,284 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!------------Google font------------->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <!------------Boot strap cdn link------------->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-   <!------------Main style sheet------------->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="jquery.bxslider.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color:yellow;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+</style>
 </head>
 <body>
- 
 
-
-
-<header class="header">
-    <ul class="bxslider">
-        <li>
-            <div class="bg-video">
-                <video id="herovideo">
-                   <a href=""><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Frajasthan&psig=AOvVaw2YEyNSt3RtK7hGaquF9JGT&ust=1601384815488000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiK9Lr1i-wCFQAAAAAdAAAAABAD"></a>
-                </video>
-                <div class="container">
-                    <div class="vidcontent">
-                        <h1 class="text-left">Welcome To DoMsE</h1>
-                        <p class="text-left">
-                          Department of Material secince and engineering 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <nav class="nav">
-        <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Notes</a></li>
-                <li><a href="">Time-Table</a></li>
-                <li class="logo"><a href="">DoMsE</a></li>
-                <li><a href="">Notice</a></li>
-                <li><a href="s.pdf">Syllabus</a></li>
-                <li><a href="">Gate(MT)</a></li>
-        </ul>
-        <a class="nav-icon" href="javascript:void(0);"><span></span><span></span><span></span></a>
-    </nav>
-</header>
-<div style="height: 500px;"></div>
-<div class="full-nav">
-   
-   <div class="logo"><a href=""><img src="https://www.gstatic.com/images/branding/product/1x/meet_64dp.png"></a><span class="hero-fb--title-copy">Google Meet</span></div>
-   
-
-
-<nav class="nav2">
-    <ul>
-        <li><a href="https://meet.google.com/pqj-hand-pqr"><span></span>MSD-311 (Nanomaterials)</a></li>
-        <li><a href="https://meet.google.com/lookup/c54iaqnpmt"><span></span>MSD-312 (Phase Transformation)</a></li>
-        <li><a href="https://meet.google.com/zsh-smwg-tmp"><span></span>MSD-313 (Magnetic Materials for industry)</a></li>
-        <li><a href="http://meet.google.com/kds-asuw-uxt"><span></span>MSD-314 (Laser Material Processing) </a></li>
-        <li><a href=" https://meet.google.com/jon-fpgk-xud"><span></span>MSD-315 (Materials Selection and Design)</a></li>
-        <li><a href=""><span></span>MSD-316 (Materials for Specific Applications)</a></li>
-        <li><a href=""><span></span>MSD-318 (Nanomaterials Lab)</a></li>
-        <li><a href=""><span></span>MSD-319 (Heat Treatment Lab)</a></li>
-    </ul>
-</nav>
-
-
-
-
-<div class="corner-circle">
-    <a href="javascript:void(0);" class="nav-close"><span></span><span></span></a>
-</div>
-
-</div>
-<main id="contents" role="main">
-    <section id="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="text-center">
-                    <h3 id=""> Notes</h3>
-                    <p class="lead pb-5">
-                        baap level website
-                    </p>
-                    <div id="carouselservices" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-311 (Nanomaterials)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-312 (Phase Transformation)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-313 (Magnetic Materials for industry)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-314 (Laser Material Processing)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-315 (Materials Selection and Design)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div> <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-316 (Materials for Specific Applications)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-318 (Nanomaterials Lab)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                    <div class="col-md px-md-5">
-                                        <div class="text-dark pb-3">
-                                            <i class="fa fa-book fa-5x"></i>
-
-                                        </div>
-                                       <a href=""> <h4 class="text-dark">MSD-319 (Heat Treatment Lab)
-                                        </h4></a>
-                                        <br>
-                                        <p class="text-secondary"></p>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<br><br><br>
-<section id="Major">
-    <div class="content-box">
-        <div class="content-title">
-            <h3 class="text-center">Quick-Menu</h3>
-            <br><br>
-        </div>
-
-<div class="container-fluid">
-    <div class="row no-gutters">
-        <div class="col-md-3 col-sm-4">
-          <div class="img-wrapper">
-              <a href="1.jpg">
-                  <img src="1.jpg" alt="" class="img-responsive">
-              </a>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="time.pdf">
-                    <img src="2.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="">
-                    <img src="3.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="">
-                    <img src="4.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="">
-                    <img src="5.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="">
-                    <img src="6.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="7.jpg">
-                    <img src="7.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="img-wrapper">
-                <a href="s.pdf">
-                    <img src="8.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-          </div>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">[MSD-321] Metal Deformation Processing</a>
+      <a href="#">[MSD-322] Electronic Materials for Industry</a>
+      <a href="#">[MSD-323] Failure Analysis</a>
+      <a href="#">[MSD-324] Material Characterization</a>
+      <a href="#">[MSD-325] Surface Engineering</a>
     </div>
+  </div> 
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
+<div style="padding-left:16px">
+  <h2>WELCOME TO DOMSE </h2>
+  <p></p>
+  <p></p>
+</div>
 
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<script src="main.js"></script>
 </body>
 </html>
