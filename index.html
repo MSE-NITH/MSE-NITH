@@ -1,114 +1,183 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {margin:0;font-family:Arial}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8">
+        <title>Responsive Dropdown nav-bar Bar</title>
+          <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+        <style>
+body {
+	margin: 0;
+	padding: 0;
 }
-
-.topnav a {
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.nav-bar {
+  height: 70px;
+  background: #333;
+}
+ 
+.brand {
+  position: absolute;
+  padding-left: 20px;
   float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a img {
+	max-height: 70px;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
   text-decoration: none;
-  font-size: 17px;
 }
-
-.active {
-  background-color: #4CAF50;
-  color: white;
+ 
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
-
-.topnav .icon {
-  display: none;
+ 
+nav {
+  float: right;
 }
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
+nav ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
-
-.dropdown-content {
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #333;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #4CAF50;
+  color: #ffffff;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+ 
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+.nav-mobile {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  top: 0;
+  right: 0;
+  background: #333;
+  height: 70px;
+  width: 70px;
 }
-
-.dropdown-content a {
-
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color:red;
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
+ 
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+ 
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+	padding-left: 25%;
+	 
+  }
+  nav ul li ul li a {
+      float: none;
+      text-decoration: none;
+      display: block;
+    text-align: left;
+  }
+  
+  .nav-dropdown {
+    position: static;
+  }
+	.brand a img {
+		max-height: 60px;
+		margin-top: 5px;
+	}
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
   }
 }
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+ 
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
 }
 table {
   font-family: arial, sans-serif;
@@ -143,128 +212,169 @@ tr:nth-child(even) {
   background-color: DarkSalmon;
   color: white;
 }
-</style>
-</head>
-<body>
-
-<div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">Meet-Links 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="https://meet.google.com/lookup/g6ckyflo5h">[MSD-321] Metal Deformation Processing</a>
-      <a href="https://meet.google.com/lookup/currmnptyv">[MSD-322] Electronic Materials for Industry</a>
-      <a href="https://meet.google.com/cua-orxq-awy">[MSD-323] Failure Analysis</a>
-      <a href="https://meet.google.com/lookup/h7pxtp7yqo">[MSD-324] Material Characterization</a>
-      <a href="https://meet.google.com/lookup/dxcx6w6qow">[MSD-325] Surface Engineering</a>
-      <a href="https://meet.google.com/lookup/ebpu4qr2a6">[MSD-327]	Electronic Materials Lab.</a>
-      <a href="#">[MSD-328] Material Characterization Lab.</a>
-      <a href="https://meet.google.com/chx-jvxi-wyj?hs=224">[CH-306] Energy And Environmental Eng.</a>
-      <a href="https://meet.google.com/lookup/bm5rlzqflr?authuser=1&hs=179">[CE-306] CPM And PERT</a>
-      <a href="https://meet.google.com/lookup/h7pxtp7yqo">[CS-380] Computer Networks</a>
-      <a href="#">[EC-380] Microcontroller And Its App.</a>
-      <a href="https://meet.google.com/lookup/cb6a3suqgl">[EE-380] Sensors And Translation</a>
-      <a href="https://meet.google.com/rtw-fmsm-gki">[HS-306] Creative Writing And Translation</a>
-      <a href="#">[HS-380] Dynamics of Behavioral Science</a>
-      <a href="https://meet.google.com/yns-osvy-tsx">[ME-380] Mechatronics And Robotics</a>
-    </div>
-  </div> 
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
-
-<div style="padding-left:16px">
-  <h2>WELCOME TO DOMSE</h2></div>
-  <div style="overflow-x: auto;">
-  <table>
-    <tr>
-      <th>Day/Time</th>
-      <th>9:00-10:00</th>
-      <th>10:00-11:00</th>
-      <th>11:00-12:00</th>
-      <th>12:00-01:00</th>
-      <th>01:00-02:00</th>
-      <th>02:00-03:00</th>
-      <th>03:00-04:00</th>
-      <th>04:00-05:00</th>
-    </tr>
-    <tr>
-      <td>MON</td>
-      <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
-      <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
-      <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
-      <td colspan="2">OPEN ELECTIVE</td>
-      <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
-      <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
-    </tr>
-    <tr>
-      <td>TUE</td>
-      <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
-      <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
-      <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
-      <td colspan="2">OPEN ELECTIVE</td>
-      <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
-      <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
-    </tr>
-    <tr>
-      <td>WED</td>
-      <td>---</td>
-      <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
-      <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
-      <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
-      <td>---</td>
-      <td colspan="3">MSD-328 MC-LAB NK</td>
-    </tr>
-    <tr>
-      <td>THU</td>
-      <td>---</td>
-      <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
-      <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
-      <td colspan="2">OPEN ELECTIVE</td>
-      <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
-      <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
-    </tr>
-    <tr>
-      <td>FRI</td>
-      <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
-      <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
-      <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
-      <td colspan="2">OPEN ELECTIVE</td>
-      <td colspan="3"><a href="https://meet.google.com/lookup/ebpu4qr2a6">MSD-327 EM LAB SKS</a></td>
-    </tr>
-  </table>
-  </div>
-  <footer>
-   <p>KARTIK<br>
-     Suggestions:-
-    <a href="http://188020@nith.ac.in/">188020@nith.ac.in</a></p>
-  </footer>
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-  var dropdown = document.getElementsByClassName("dropbtn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
-  });
-}
+        </style>
+    </head>
+    <body>
+        <section class="nav-bar">
+            <div class="nav-container">
+              <div class="brand">
+                <a href=""><img src="clipart2532352 (1).png"></a>
+              </div>
+              <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Meet-links</a>
+                    <ul class="nav-dropdown">
+                        <li>
+                            <a href="https://meet.google.com/lookup/g6ckyflo5h">[MSD-321] Metal Deformation Processing</a>
+                          </li>
+                          <li>
+                            <a href="https://meet.google.com/lookup/currmnptyv">[MSD-322] Electronic Materials for Industry</a>
+                          </li>
+                          <li>
+                            <a href="https://meet.google.com/cua-orxq-awy">[MSD-323] Failure Analysis</a>
+                          </li>
+                          <li>
+                            <a href="https://meet.google.com/lookup/h7pxtp7yqo">[MSD-324] Material Characterization</a>
+                          </li>
+                          <li>
+                            <a href="https://meet.google.com/lookup/dxcx6w6qow">[MSD-325] Surface Engineering</a>
+                          </li>
+                          <li>
+                            <a href="https://meet.google.com/lookup/ebpu4qr2a6">[MSD-327]	Electronic Materials Lab.</a>
+                          </li>
+                          <li>
+                            <a href="#">[MSD-328] Material Characterization Lab.</a>
+                          </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#!">Open-Elective</a>
+                  <ul class="nav-dropdown">
+                      <li>
+                        <a href="#">[CH-306] Energy And Environmental Eng.</a>
+                      </li>
+                      <li>
+                        <a href="https://meet.google.com/lookup/bm5rlzqflr?authuser=1&hs=179">[CE-306] CPM And PERT</a>
+                      </li>
+                      <li>
+                        <a href="https://meet.google.com/lookup/h7pxtp7yqo">[CS-380] Computer Networks</a>
+                      </li>
+                      <li>
+                        <a href="#">[EC-380] Microcontroller And Its App.</a>
+                      </li>
+                      <li>
+                        <a href="https://meet.google.com/lookup/cb6a3suqgl">[EE-380] Sensors And Translation</a>
+                      </li>
+                      <li>
+                        <a href="#">[HS-306] Creative Writing And Translation</a>
+                      </li>
+                      <li>
+                        <a href="#">[HS-380] Dynamics of Behavioral Science</a>
+                      </li>
+                      <li>
+                        <a href="#">[ME-380] Mechatronics And Robotics</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">About</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </section>
+          <div style="padding-left:16px">
+            <h2>WELCOME TO DOMSE</h2></div>
+            <div style="overflow-x: auto;">
+            <table>
+              <tr>
+                <th>Day/Time</th>
+                <th>9:00-10:00</th>
+                <th>10:00-11:00</th>
+                <th>11:00-12:00</th>
+                <th>12:00-01:00</th>
+                <th>01:00-02:00</th>
+                <th>02:00-03:00</th>
+                <th>03:00-04:00</th>
+                <th>04:00-05:00</th>
+              </tr>
+              <tr>
+                <td>MON</td>
+                <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+                <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+                <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+                <td colspan="2">OPEN ELECTIVE</td>
+                <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+                <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+              </tr>
+              <tr>
+                <td>TUE</td>
+                <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+                <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+                <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+                <td colspan="2">OPEN ELECTIVE</td>
+                <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+                <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+              </tr>
+              <tr>
+                <td>WED</td>
+                <td>---</td>
+                <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+                <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+                <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+                <td>---</td>
+                <td colspan="3">MSD-328 MC-LAB NK</td>
+              </tr>
+              <tr>
+                <td>THU</td>
+                <td>---</td>
+                <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+                <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+                <td colspan="2">OPEN ELECTIVE</td>
+                <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+                <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+              </tr>
+              <tr>
+                <td>FRI</td>
+                <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+                <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+                <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+                <td colspan="2">OPEN ELECTIVE</td>
+                <td colspan="3"><a href="https://meet.google.com/lookup/ebpu4qr2a6">MSD-327 EM LAB SKS</a></td>
+              </tr>
+            </table>
+            </div>
+            <footer>
+             <p>KARTIK<br>
+               Suggestions:-
+              <a href="http://188020@nith.ac.in/">188020@nith.ac.in</a></p>
+            </footer>
+          <script  src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 </script>
-
-</body>
+<script>
+(function($) { 
+  $(function() { 
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      $('.dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); 
+})(jQuery);
+</script>
+    </body>
 </html>
