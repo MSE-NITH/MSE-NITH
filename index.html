@@ -222,11 +222,29 @@ tr:nth-child(even) {
 			background-color:red;
 			color:white;
 		}
-			
+    .ok{
+      background-color:#333;
+      color: white;
+      padding-left: 3px;
+    }
+    .ol{
+        border: 2px solid #333; 
+        width: 100%;
+        height:fit-content;
+        background-color: #333;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      
+      }
+      .jk{
+        background-color: white;
+        padding-top: 17px;
+      }
 
         </style>
     </head>
-    <body>
+    <body onload="showhide()">
         <section class="nav-bar">
             <div class="nav-container">
               <div class="brand">
@@ -300,8 +318,9 @@ tr:nth-child(even) {
               </nav>
             </div>
           </section>
-          <div style="padding-left:16px">
-            <h2>WELCOME TO ATOMIC</h2></div>
+          <div style="padding-left:1px">
+            <h2 style="padding-left: 16px;">WELCOME TO DOMSE</h2>
+          <div class="ol"><b><i class="fa fa-calendar"> Today Schedule</i> </b></h4></div>
             <div style="overflow-x: auto;">
             <table>
               <tr>
@@ -315,7 +334,7 @@ tr:nth-child(even) {
                 <th>03:00-04:00</th>
                 <th>04:00-05:00</th>
               </tr>
-              <tr>
+              <tr id="1" style="display:none;"> 
                 <td>MON</td>
                 <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
                 <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
@@ -324,7 +343,7 @@ tr:nth-child(even) {
                 <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
                 <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
               </tr>
-              <tr>
+              <tr id="2" style="display:none;">
                 <td>TUE</td>
                 <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
                 <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
@@ -333,7 +352,7 @@ tr:nth-child(even) {
                 <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
                 <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
               </tr>
-              <tr>
+              <tr id="3" style="display:none;">
                 <td>WED</td>
                 <td>---</td>
                 <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
@@ -342,7 +361,7 @@ tr:nth-child(even) {
                 <td>---</td>
                 <td colspan="3">MSD-328 MC-LAB NK</td>
               </tr>
-              <tr>
+              <tr id="4" style="display:none;"> 
                 <td>THU</td>
                 <td>---</td>
                 <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
@@ -351,8 +370,8 @@ tr:nth-child(even) {
                 <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
                 <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
               </tr>
-              <tr>
-                <td>FRI</td>
+              <tr id="5" style="display:none;">
+                <td >FRI</td>
                 <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
                 <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
                 <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
@@ -363,6 +382,70 @@ tr:nth-child(even) {
 		     <td class="on" colspan="9">
           <i class="fa fa-info-circle" aria-hidden="true"></i>    Rk - Prof. Ravi Kumar,      SKS - Dr. Sumit K Sharma,        NK - Dr. Nitesh Kumar,     RBS - Dr. Raj B. Singh,      RM - Dr.Rita Maurya 
               </td>
+            </tr>
+            <tr>
+              <td colspan="9" class="jk"></td>
+            </tr>
+            <tr>
+              <td colspan="9" class="ok"><i class="fa fa-calendar">  All week Schedule </i></td>
+            </tr>
+            <tr>
+              <th>Day/Time</th>
+              <th>9:00-10:00</th>
+              <th>10:00-11:00</th>
+              <th>11:00-12:00</th>
+              <th>12:00-01:00</th>
+              <th>01:00-02:00</th>
+              <th>02:00-03:00</th>
+              <th>03:00-04:00</th>
+              <th>04:00-05:00</th>
+            </tr>
+            <tr> 
+              <td>MON</td>
+              <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+              <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+              <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+              <td colspan="2">OPEN ELECTIVE</td>
+              <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+              <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+            </tr>
+            <tr>
+              <td>TUE</td>
+              <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+              <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+              <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+              <td colspan="2">OPEN ELECTIVE</td>
+              <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+              <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+            </tr>
+            <tr>
+              <td>WED</td>
+              <td>---</td>
+              <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+              <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+              <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+              <td>---</td>
+              <td colspan="3">MSD-328 MC-LAB NK</td>
+            </tr>
+            <tr> 
+              <td>THU</td>
+              <td>---</td>
+              <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+              <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+              <td colspan="2">OPEN ELECTIVE</td>
+              <td><a href="https://meet.google.com/cua-orxq-awy">MSD-323 NK</a></td>
+              <td><a href="https://meet.google.com/lookup/dxcx6w6qow">MSD-325 RM</a></td>
+            </tr>
+            <tr>
+              <td >FRI</td>
+              <td><a href="https://meet.google.com/lookup/currmnptyv">MSD-322 SKS</a></td>
+              <td><a href="https://meet.google.com/lookup/h7pxtp7yqo">MSD-324 RK</a></td>
+              <td><a href="https://meet.google.com/lookup/g6ckyflo5h">MSD-321 RBS</a></td>
+              <td colspan="2">OPEN ELECTIVE</td>
+              <td colspan="3"><a href="https://meet.google.com/lookup/ebpu4qr2a6">MSD-327 EM LAB SKS</a></td>
+            </tr>
+            <tr>
+              <td colspan="9" class="jk"></td>
             </tr>
             <tr>
 		    <td class="onn" colspan="9">
@@ -398,5 +481,14 @@ tr:nth-child(even) {
   }); 
 })(jQuery);
 </script>
+<script type="text/javascript">
+  function showhide(id) {
+      var d = new Date();
+      var s = document.getElementById(d.getDay());
+      s.style.display = (s.style.display == "") ? 'none' : "";
+  
+  }
+  </script>
+  
     </body>
 </html>
