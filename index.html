@@ -260,13 +260,7 @@ tr:nth-child(even) {
   color: white;
 
 }
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-}
+
 .loader-wrapper {
   width: 100%;
   height: 100%;
@@ -313,12 +307,16 @@ tr:nth-child(even) {
 
         </style>
     </head>
+
     <body onload="showhide()">
         <section class="nav-bar">
             <div class="nav-container">
               <div class="brand">
                 <a href=""><img src="clipart2532352 (1).png"></a>
 		    </div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
               <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
                 <ul class="nav-list">
@@ -576,9 +574,7 @@ tr:nth-child(even) {
                 
                 </p>
 	</footer>
-<div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
-    </div>
+
           <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <script>
